@@ -6,23 +6,23 @@ sudo apt-get install -y apache2 git php5 php5-mysql php5-curl mysql-client curl
 
 
 
-sudo git clone https://github.com/Langenoir1878/MP2Application-setup.git
+sudo git clone https://github.com/Langenoir1878/FP.git
 
-mv ./MP2Application-setup/images /var/www/html/images
-mv ./MP2Application-setup/*.png /var/www/html
-mv ./MP2Application-setup/*.js /var/www/html
-mv ./MP2Application-setup/*.css /var/www/html
-mv ./MP2Application-setup/*.php /var/www/html
+mv ./FP/images /var/www/html/images
+mv ./FP/*.png /var/www/html
+mv ./FP/*.js /var/www/html
+mv ./FP/*.css /var/www/html
+mv ./FP/*.php /var/www/html
 
-mv ./MP2Application-setup/*.eot /var/www/html
-mv ./MP2Application-setup/*.svg /var/www/html
-mv ./MP2Application-setup/*.ttf /var/www/html
-mv ./MP2Application-setup/*.woff /var/www/html
-mv ./MP2Application-setup/*.woff2 /var/www/html
+mv ./FP/*.eot /var/www/html
+mv ./FP/*.svg /var/www/html
+mv ./FP/*.ttf /var/www/html
+mv ./FP/*.woff /var/www/html
+mv ./FP/*.woff2 /var/www/html
 
-mv ./MP2Application-setup/css var/www/html
-mv ./MP2Application-setup/js var/www/html
-mv ./MP2Application-setup/fonts var/www/html
+mv ./FP/css var/www/html
+mv ./FP/js var/www/html
+mv ./FP/fonts var/www/html
 
 
 

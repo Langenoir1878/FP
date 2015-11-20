@@ -1,4 +1,4 @@
-# LAST UPDATED: NOV 6, 2015
+# LAST UPDATED: NOV 20, 2015
 # Revised on OCT 25, 13:12:11 PM
 # Yiming Zhang
 # UPDATED INSTRUCTIONS UPON LAUNCHING NOV 4th, 2015
@@ -21,7 +21,7 @@
 declare -a instanceARR
 
 # 3. mapfile (updated Nov 4, 2015)
-mapfile -t instanceARR < <(aws ec2 run-instances --image-id $1 --count $2 --instance-type $3 --security-group-ids $4 --subnet-id $5 --key-name $6  --associate-public-ip-address --iam-instance-profile Name=$7 --user-data file://../MP2Environment-setup/install-webserver.sh --output table | grep InstanceId | sed "s/|//g" | tr -d ' ' | sed "s/InstanceId//g")
+mapfile -t instanceARR < <(aws ec2 run-instances --image-id $1 --count $2 --instance-type $3 --security-group-ids $4 --subnet-id $5 --key-name $6  --associate-public-ip-address --iam-instance-profile Name=$7 --user-data file://install-webserver.sh --output table | grep InstanceId | sed "s/|//g" | tr -d ' ' | sed "s/InstanceId//g")
 
 echo ${instanceARR[@]}
 
@@ -56,11 +56,11 @@ aws elb configure-health-check --load-balancer-name SIMMON-THE-CAT --health-chec
 
 
 # 8. launch configuration (updated Nov 4, 2015)
-echo -e "\nCreating launch configuration: SIMMON-CONFIG-LAUNCH"
+echo -e "\nCreating launch configuration: SIMMON-CONFIG-LAUNCH . . ."
 aws autoscaling create-launch-configuration --launch-configuration-name SIMMON-CONFIG-LAUNCH --image-id $1 --instance-type $3 --security-groups $4 --key-name $6 --user-data file://../Environment-setup/install-webserver.sh --iam-instance-profile $7 --debug
 
 # 9. auto-scaling (updated Nov 4, 2015)
-echo -e "\nCreating the auto scaling group"
+echo -e "\nCreating the auto scaling group . . ."
 aws autoscaling create-auto-scaling-group --auto-scaling-group-name SIMMON-AUTO-SCALE --launch-configuration-name SIMMON-CONFIG-LAUNCH --load-balancer-name SIMMON-THE-CAT --health-check-type ELB --min-size 1 --max-size 3 --desired-capacity 2 --default-cooldown 600 --health-check-grace-period 120 --vpc-zone-identifier $5
 
 # secure the count of total instances
@@ -69,7 +69,7 @@ aws autoscaling put-scaling-policy --auto-scaling-group-name SIMMON-AUTO-SCALE -
 
 
 # 10. rds instance 
-echo -e "\nCreating database"
+echo -e "\nCreating database. . ."
 mapfile -t dbInstanceARR < <(aws rds describe-db-instances --output json | grep "\"DBInstanceIdentifier" | sed "s/[\"\:\, ]//g" | sed "s/DBInstanceIdentifier//g")
 
 #if [ ${#dbInstanceARR[@]} -gt 0 ]
