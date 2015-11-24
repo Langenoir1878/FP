@@ -2,7 +2,7 @@
 # Repo ref: https://github.com/jhajek/itmo-544-444-env/blob/master/install-webserver.sh
 
 sudo apt-get update -y
-sudo apt-get install -y apache2 git php5 php5-mysql php5-curl mysql-client curl
+sudo apt-get install -y apache2 git php5 php5-mysql php5-curl mysql-client curl php5-imagick
 
 
 
