@@ -174,8 +174,8 @@ $Arn = $sns->createTopic(array(
 
 $subscribe = $sns->subscribe(array(
     'Protocol' => 'email',
-    #'Endpoint' => $myEmail,
-    'Endpoint'=>"yzhan214@hawk.iit.edu",
+    'Endpoint' => $myEmail,
+    #'Endpoint'=>"yzhan214@hawk.iit.edu",
     'TopicArn' => $Arn['TopicArn'],
 ));
 
@@ -187,7 +187,7 @@ $topicAttributes = $sns->setTopicAttributes(array(
 ));
 
 $publisher = $sns->publish(array(
-    'Message' => 'testing pulisher msg',
+    'Message' => 'Thank you for subscribing!',
     'TopicArn' => $Arn['TopicArn']
 ));
 
