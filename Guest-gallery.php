@@ -173,7 +173,7 @@ $email = $_POST["email"];
         <div class = "row">
             <div align = "center">
                 <div class="col-lg-12">
-                    <font color = "#00FF00" ><p>Copyright &copy; Yiming ZHANG ITMO 544 MP-1 2015</p></font>
+                    <font color = "#00FF00" ><p>Copyright &copy; Yiming ZHANG ITMO 544 FP-FINAL 2015</p></font>
                     
                 </div>
             </div>

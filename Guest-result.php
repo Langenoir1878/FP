@@ -129,13 +129,14 @@ $EMAIL = $_POST['useremail'];
 $PHONE = $_POST['phone']; 
 $RAWS3URL = $url; //obtained from far above..
 $IMGNAME = basename($_FILES['userfile']['name']);
-$FINISHEDS3URL = "..";
+$FINISHEDS3URL = $url;
+//using other CSS modifications other than imagick so the url remains the same
 $STATE =0;
 
 date_default_timezone_set('America/Chicago');
             #$myDate = date('j M Y - h:i:s A');
 $TIMESTR= "Current time: " . date('j M Y - h:i:s A');
-print "line 154 in result.php can be reached if printed out. Preparing for binding";
+//print "line 154 in result.php can be reached if printed out. Preparing for binding";
 $stmt->bind_param("ssssssis",$USERNAME,$EMAIL,$PHONE,$RAWS3URL,$IMGNAME,$FINISHEDS3URL,$STATE,$TIMESTR);
 
 

@@ -109,7 +109,7 @@ $link->close();
 	
 <link rel="stylesheet" type="text/css" href="stylesheet.css" title="Style">
     <div class = "lay_content" align = "center" >
-        <font color = "#FFFFFF"><h1> ITMO 544 MP-1 Y.Z. </h1></font>
+        <font color = "#FFFFFF"><h1> ITMO 544 MP-FINAL Y.Z. </h1></font>
         <p><?php echo $successMsg . $failureMsg ;?></p>
     </div>
     <div class = "left_side">

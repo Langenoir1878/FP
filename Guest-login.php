@@ -52,8 +52,8 @@
 				<p>This is the guest page</p>
 				<p>The guest system won't automatically subscribe to this application</p><br>
 				<p>This page will automatically prepare the database for user</p>
-				<p>Please <a href= "login.php"> Log In </a> & subscribe! </p><br>
-				<p><font color = "grey"> ITMP 544 MP-2 15Fall </font></p>
+				<p>Please <font color = "pink"><a href= "login.php"> Log In </a> </font>& subscribe! </p><br>
+				<p><font color = "grey"> ITMO 544 MP-FINAL 15Fall </font></p>
 				<br>
 				<br><br><br>
 			</font>
