@@ -131,7 +131,7 @@ Enter Phone of user: </font><input type="phone" name="phone">
 </form>
 <br>
 
-<form enctype="multipart/form-data" action="Guest-gallery.php" method="POST">
+<form enctype="multipart/form-data" action="gallery.php" method="POST">
   
   <br><font color = "white">  
 Enter Email of user for gallery to browse: </font>
