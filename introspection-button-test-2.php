@@ -3,18 +3,37 @@
 ?>
 <DOCTYPE html>
 <html>
+<style>
+    .hidden-div {
+        display:none
+    }
+    </style>
 <head></head>
+
+
 <body>
 <p>testing if this can disable the upload button in page-1</p>
-<form enctype="multipart/form-data" action="introspection-button-test-1.php" method="POST">
+<form enctype="multipart/form-data" action="#" method="POST">
 	<label><input type="checkbox" id="cbox1">Read-only Mode Trigger</label><br>
 	<?php 
 	//validate if cbox1 isset
 	if (isset(cbox1)){
 		?>
-	<input type="submit" value="Enter">
+		<div class="hidden_div">
+	<input type="submit" value="test">
+	<div>
+
 	<?php
+	} else{
+	?>
+	
+	<input type="submit" value="test" >
+
+
+
+	<?php	
 	}
+
 	?>
 	
 	</form>
