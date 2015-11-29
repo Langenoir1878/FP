@@ -3,7 +3,8 @@
  * Cited from https://github.com/jhajek/itmo-544-444-fall2015/blob/master/setup.php
  * Oct 25th, 2015
  * Yiming Zhang
- * ITMO 544 MP 1
+ * ITMO 544 MP- FINAL
+ * Introspection 
  *
  */
 ?>
@@ -31,7 +32,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <title>Setup</title>
+  <title>Introspection</title>
 </head>
 
 <body>
@@ -42,26 +43,19 @@
 // Start the session
 require 'vendor/autoload.php';
 use Aws\Rds\RdsClient;
-#$rds = new Aws\Rds\RdsClient(array(
- #   'version' => 'latest',
-  #  'region'  => 'us-east-1'
-#));
-$client = RdsClient::factory(array(
-  'version'=>'latest',
-  'region'=>'us-east-1'
+$rds = new Aws\Rds\RdsClient(array(
+    'version' => 'latest',
+    'region'  => 'us-east-1'
 ));
 
-
-# updated Nov 13, for testing $client
-$result = $client->describeDBInstances(array(
+# updated Nov 29, for testing $rds
+$result = $rds->describeDBInstances(array(
 	'DBInstanceIdentifier'=>'simmon-the-cat-db'
 	));
 
 $endpoint = $result['DBInstances'][0]['Endpoint']['Address'];
-#print "============\n". $endpoint . "================\n";
 
-#echo "begin database";
-$link = new mysqli($endpoint,"LN1878","hesaysmeow","simmoncatdb") or die("Error in line 89 in setup.php" . mysqli_error($link)); 
+$link = new mysqli($endpoint,"LN1878","hesaysmeow","simmoncatdb") or die("Error in line 58 in introspection.php" . mysqli_error($link)); 
 
 /* check connection */
 
@@ -72,31 +66,10 @@ if (mysqli_connect_errno()) {
     exit();
   }
 
-#echo "Here is the result: " . $link;
-$sqlSTETEMENTstr='CREATE TABLE CAT_TABLE 
-(
-ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-USERNAME VARCHAR(32),
-EMAIL VARCHAR(100),
-PHONE VARCHAR(30),
-RAWS3URL VARCHAR(500),
-FINISHEDS3URL VARCHAR(500),
-IMGNAME VARCHAR(100),
-STATE TINYINT(3) CHECK(STATE IN (0,1,2)),
-TIMESTR VARCHAR(50) 
-)';
+?></h2></font>
 
-$debug = $link->query($sqlSTETEMENTstr);
 
-if ($debug){
-  echo "CAT_TABLE created";
-} 
-else { echo "Create table failed"; }
 
-$link->close();
-
-?></h2>
-</font>
 <br><br>
 <font color = "#00FF00"><h1><a href="index.php"> * Index * </a></h1></font>
 </div>
