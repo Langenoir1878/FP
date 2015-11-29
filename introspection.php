@@ -1,7 +1,7 @@
 <?php
 /*
- * Cited from https://github.com/jhajek/itmo-544-444-fall2015/blob/master/setup.php
- * Oct 25th, 2015
+ * 
+ * NOV 29 2015 SUN
  * Yiming Zhang
  * ITMO 544 MP- FINAL
  * Introspection 
@@ -66,6 +66,7 @@ if (mysqli_connect_errno()) {
     exit();
   }
 
+//triggering upload button -> disabled. still working on the logic for this part
 ?></h2></font>
 
 
