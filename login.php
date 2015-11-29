@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<p>Password: ZHANG (case sensitive)</p><br>
 				<p>This page will automatically prepare the database for user after login.</p>
 				<p>Please fill in the above fields for testing.</p><br>
-				<p><font color = "grey"> ITMP 544 MP-2 15Fall </font></p>
+				<p><font color = "grey"> ITMO 544 MP-FINAL 15Fall </font></p>
 				<br>
 				<br><br><br>
 			</font>
