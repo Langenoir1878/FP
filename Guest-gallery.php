@@ -140,6 +140,8 @@ $email = $_POST["email"];
 		<?php echo #$imageSTR; ?>
 	</font>
     */ 
+    //veryfy if the user submitted imaged in the past
+    if isset($row['RAWS3URL']){
     ?>
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
                 <a class="thumbnail" href="#">
@@ -148,6 +150,26 @@ $email = $_POST["email"];
             </div>
 
 <?php
+    }else{
+    //display only the raw images
+        print "System detedted that you haven't uploaded an image yet, here are the raw images from other user";
+         $link->real_query("SELECT * FROM CAT_TABLE");
+         $res = $link->use_result();
+        //echo "Result set order...\n";
+        while ($row = $res->fetch_assoc()) {
+        #adding effects here
+        $urlINFO = "<img src =\" " . $row['RAWS3URL'] . "\" />";
+        ?>
+
+        <br>
+        <font color="#00FF00">&nbsp;&nbsp;  Uploaded image: <br>
+        <?php echo $urlINFO; ?>
+        </font> 
+        <br>
+
+        <?php
+
+    }
 //reopen the php tag to end the while loop
 
 } 
