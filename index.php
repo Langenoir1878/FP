@@ -117,7 +117,7 @@ $link->close();
     <div class = "lay_content" align = "center" >
         <font color = "#FFFFFF"><h1> ITMO 544 MP-FINAL Y.Z. </h1></font>
         
-        <font color = "white"><p><a href="introspection.php">*** Introspection Page *** </p></font>
+        <font color = "white"><p><a href="introspection.php">*** Introspection Page *** </a></p></font>
         <p><?php echo $successMsg . $failureMsg ;?></p>
     </div>
     <div class = "left_side">
